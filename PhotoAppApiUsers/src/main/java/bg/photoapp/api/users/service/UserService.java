@@ -7,5 +7,6 @@ import bg.photoapp.api.users.dto.UserDto;
 public interface UserService extends UserDetailsService	{
 	
 	public UserDto createUser(UserDto userDetails);
+	public UserDto getUserDetailsByEmail(String email);
 
 }
