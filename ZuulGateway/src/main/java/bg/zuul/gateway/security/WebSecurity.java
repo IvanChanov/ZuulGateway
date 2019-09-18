@@ -29,6 +29,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		//permit all request to the login page without validation
 		http.authorizeRequests().antMatchers(HttpMethod.POST, env.getProperty("api.login.url.path")).permitAll();
 		http.authorizeRequests().antMatchers(HttpMethod.POST, env.getProperty("api.registration.url.path")).permitAll();
+		http.authorizeRequests().antMatchers(env.getProperty("api.zuul.actuator.url.path")).permitAll();
 		http.authorizeRequests().antMatchers(env.getProperty("api.h2.console.url.path")).permitAll()
 		//this means that any other request different by those above will need to be authenticated
 		.anyRequest().authenticated()
